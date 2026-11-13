@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Design tokens — Portfolio Studio
+   Paleta: violeta profundo, lila, rosa y naranja.
+   ========================================================================== */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+
+  --violet-950: #12061f;
+  --violet-900: #1e0b3a;
+  --violet-800: #2e1065;
+  --violet-600: #7c3aed;
+  --violet-500: #8b5cf6;
+  --lilac-300: #c4b5fd;
+  --lilac-200: #ddd6fe;
+  --pink-500: #ec4899;
+  --pink-400: #f472b6;
+  --fuchsia-500: #d946ef;
+  --orange-400: #fb923c;
+  --orange-300: #fdba74;
+
+  /* Paleta: los 3 colores base. Todo lo demás se deriva de ellos, así cambiar
+     de paleta (ver utils/design.js) cambia el sitio completo. */
+  --c1: #8b5cf6;
+  --c2: #ec4899;
+  --c3: #fb923c;
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #fb7185;
+  --info: #a78bfa;
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --sidebar-w: 268px;
+  --topbar-h: 72px;
+}
+
+/* Derivados de la paleta */
+:root {
+  --c2-soft: color-mix(in srgb, var(--c2) 70%, white);
+  --grad-brand: linear-gradient(120deg, var(--c1) 0%, color-mix(in srgb, var(--c1) 50%, var(--c2)) 38%, var(--c2) 62%, var(--c3) 100%);
+  --grad-brand-soft: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--c1) 18%, transparent),
+    color-mix(in srgb, var(--c2) 14%, transparent),
+    color-mix(in srgb, var(--c3) 16%, transparent)
+  );
+  --grad-text: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--c1) 45%, white) 0%,
+    color-mix(in srgb, var(--c2) 45%, white) 45%,
+    color-mix(in srgb, var(--c2) 75%, white) 65%,
+    color-mix(in srgb, var(--c3) 55%, white) 100%
+  );
+}
+
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: color-mix(in srgb, var(--c1) 5%, #060509);
+  --bg-2: color-mix(in srgb, var(--c1) 10%, #08070d);
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-2: rgba(255, 255, 255, 0.06);
+  --surface-3: rgba(255, 255, 255, 0.1);
+  --surface-solid: color-mix(in srgb, var(--c1) 12%, #0d0b14);
+  --border: color-mix(in srgb, color-mix(in srgb, var(--c1) 50%, white) 12%, transparent);
+  --border-strong: color-mix(in srgb, color-mix(in srgb, var(--c1) 50%, white) 24%, transparent);
+  --text: color-mix(in srgb, var(--c1) 4%, #faf9fc);
+  --text-muted: color-mix(in srgb, var(--c1) 22%, #b4b0c2);
+  --text-soft: color-mix(in srgb, var(--c1) 22%, #7d7890);
+  --accent: color-mix(in srgb, var(--c1) 45%, white);
+  --accent-strong: color-mix(in srgb, var(--c1) 65%, white);
+  --ring: color-mix(in srgb, var(--c1) 60%, transparent);
+  --shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--border);
+  --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--c1) 22%, transparent), 0 18px 60px -12px color-mix(in srgb, var(--c1) 45%, transparent),
+    0 8px 40px -16px color-mix(in srgb, var(--c2) 35%, transparent);
+  --aurora-opacity: 0.7;
+  --noise-opacity: 0.06;
+  --input-bg: color-mix(in srgb, color-mix(in srgb, var(--c1) 8%, #07060b) 60%, transparent);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: color-mix(in srgb, var(--c1) 3%, #fdfcfe);
+  --bg-2: color-mix(in srgb, var(--c1) 8%, #fbfafc);
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-2: rgba(255, 255, 255, 0.82);
+  --surface-3: color-mix(in srgb, var(--c1) 8%, transparent);
+  --surface-solid: #ffffff;
+  --border: color-mix(in srgb, color-mix(in srgb, var(--c1) 70%, black) 12%, transparent);
+  --border-strong: color-mix(in srgb, color-mix(in srgb, var(--c1) 70%, black) 24%, transparent);
+  --text: color-mix(in srgb, var(--c1) 12%, #15121c);
+  --text-muted: color-mix(in srgb, var(--c1) 25%, #57536a);
+  --text-soft: color-mix(in srgb, var(--c1) 22%, #8b879c);
+  --accent: color-mix(in srgb, var(--c1) 82%, black);
+  --accent-strong: color-mix(in srgb, var(--c1) 70%, black);
+  --ring: color-mix(in srgb, var(--c1) 40%, transparent);
+  --c2-soft: color-mix(in srgb, var(--c2) 85%, black);
+  --shadow: 0 20px 50px -24px rgba(76, 29, 149, 0.28), 0 0 0 1px var(--border);
+  --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--c1) 16%, transparent), 0 18px 50px -14px color-mix(in srgb, var(--c1) 35%, transparent),
+    0 8px 30px -16px color-mix(in srgb, var(--c2) 30%, transparent);
+  --aurora-opacity: 0.45;
+  --noise-opacity: 0.035;
+  --input-bg: rgba(255, 255, 255, 0.85);
+  --grad-text: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--c1) 80%, black) 0%,
+    color-mix(in srgb, var(--c1) 40%, color-mix(in srgb, var(--c2) 80%, black)) 40%,
+    color-mix(in srgb, var(--c2) 85%, black) 70%,
+    color-mix(in srgb, var(--c3) 85%, black) 100%
+  );
+}
